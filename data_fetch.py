@@ -12,17 +12,5 @@ def get_earthquakes():
 
     eq_data = requests.get(url, params=params).json()
 
-    lons, lats, mags  = [], [], []
-    for f in eq_data['features']:
-        coords = f['geometry']['coordinates']
+    return eq_data['features']
 
-        lons.append(coords[0])
-        lats.append(coords[1])
-        mags.append(f['properties']['mag'])
-
-    return {
-        'features': eq_data['features'],
-        'lons': lons,
-        'lats': lats,
-        'mags': mags
-    }

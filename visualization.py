@@ -1,8 +1,8 @@
 from plotly import offline
 
-from data_fetch import get_earthquakes
+from processing import prepare_data
 
-eq_data = get_earthquakes()
+eq_data = prepare_data()
 
 lons = eq_data['lons']
 lats = eq_data['lats']
