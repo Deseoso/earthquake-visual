@@ -2,9 +2,7 @@ from plotly import offline
 
 from processing import prepare_data
 
-eq_data = prepare_data()
-
-def draw_map():
+def draw_map(eq_data):
 
     lons = eq_data['lons']
     lats = eq_data['lats']

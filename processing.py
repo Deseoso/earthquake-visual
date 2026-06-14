@@ -1,8 +1,7 @@
 from data_fetch import get_earthquakes
 
-features = get_earthquakes()
 
-def prepare_data():
+def prepare_data(features):
     lons, lats, mags = [], [], []
     for f in features:
         coords = f['geometry']['coordinates']
