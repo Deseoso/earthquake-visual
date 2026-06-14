@@ -4,19 +4,21 @@ from processing import prepare_data
 
 eq_data = prepare_data()
 
-lons = eq_data['lons']
-lats = eq_data['lats']
-mags = eq_data['mags']
+def draw_map():
 
-data = {
-    'type': 'scattergeo',
-    'lon': lons,
-    'lat': lats,
-}
+    lons = eq_data['lons']
+    lats = eq_data['lats']
+    mags = eq_data['mags']
 
-my_layout = {
-    'title': 'Earthquake Visualization'
-}
+    data = {
+        'type': 'scattergeo',
+        'lon': lons,
+        'lat': lats,
+    }
 
-fig = {'data': data, 'layout': my_layout}
-offline.plot(fig, filename='earthquake_visualization.html')
+    my_layout = {
+        'title': 'Earthquake Visualization'
+    }
+
+    fig = {'data': data, 'layout': my_layout}
+    offline.plot(fig, filename='earthquake_visualization.html')
