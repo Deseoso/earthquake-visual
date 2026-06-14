@@ -10,14 +10,19 @@ def get_earthquakes():
         'endtime': "2026-06-14"
     }
 
-    data = requests.get(url, params=params).json()
+    eq_data = requests.get(url, params=params).json()
 
     lons, lats, mags  = [], [], []
-    for f in data['features']:
+    for f in eq_data['features']:
         coords = f['geometry']['coordinates']
 
         lons.append(coords[0])
         lats.append(coords[1])
         mags.append(f['properties']['mag'])
 
-    return data['features']
+    return {
+        'features': eq_data['features'],
+        'lons': lons,
+        'lats': lats,
+        'mags': mags
+    }

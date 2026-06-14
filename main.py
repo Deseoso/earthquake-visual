@@ -1,8 +1,6 @@
-import requests
-
 from data_fetch import get_earthquakes
 
-features = get_earthquakes()
+features = get_earthquakes()['features']
 
 print(len(features))
 print(features[0])
