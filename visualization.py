@@ -1,10 +1,8 @@
 from plotly import offline
 
 
-def draw_map(eq_data, time_data):
+def draw_map(eq_data, map_title):
 
-    current_time = time_data['current_time']
-    day_ago = time_data['day_ago']
     lons = eq_data['lons']
     lats = eq_data['lats']
     mags = eq_data['mags']
@@ -37,7 +35,7 @@ def draw_map(eq_data, time_data):
 
     my_layout = {
         'title': {
-            'text': f"🌍Earthquake Visualization <br> ({day_ago} -- {current_time})",
+            'text': map_title,
             'font': {
                 'size': 36,
                 'color': '#1f2c56',

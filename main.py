@@ -1,15 +1,18 @@
 from data_fetch import get_earthquakes
 from visualization import draw_map
 from processing import prepare_data
-from data_fetch import get_time
+from time_utils import get_time
 
 
 def start_map():
     time_data = get_time()
+    map_title = (f"🌍Earthquake Visualization <br> ({time_data['day_ago']} "
+                    f"-- {time_data['current_time']})")
+
     features = get_earthquakes(time_data)
     eq_data = prepare_data(features)
 
-    draw_map(eq_data, time_data)
+    draw_map(eq_data, map_title)
 
 if __name__ == "__main__":
     start_map()
