@@ -2,7 +2,7 @@ from data_fetch import get_earthquakes
 
 
 def prepare_data(features):
-    lons, lats, mags = [], [], []
+    lons, lats, mags, hover_text = [], [], [], []
     for f in features:
 
         mag = float(f['properties']['mag'])
@@ -11,6 +11,7 @@ def prepare_data(features):
 
         coords = f['geometry']['coordinates']
 
+        hover_text.append(f['properties']['place'])
         lons.append(coords[0])
         lats.append(coords[1])
         mags.append(mag)
@@ -18,5 +19,6 @@ def prepare_data(features):
     return {
         'lons': lons,
         'lats': lats,
-        'mags': mags
+        'mags': mags,
+        'hover_text': hover_text,
     }

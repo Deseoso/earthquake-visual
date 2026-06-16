@@ -7,11 +7,13 @@ def draw_map(eq_data):
     lons = eq_data['lons']
     lats = eq_data['lats']
     mags = eq_data['mags']
+    hover_text = eq_data['hover_text']
 
     data = {
         'type': 'scattergeo',
         'lon': lons,
         'lat': lats,
+        'text': hover_text,
         'marker': {
             'size': [mag*5 for mag in mags],
             'color': mags,
