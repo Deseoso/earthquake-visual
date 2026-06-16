@@ -1,14 +1,20 @@
 from plotly import offline
-
+from data_fetch import get_time
 from processing import prepare_data
 
-def draw_map(eq_data):
 
+def draw_map(eq_data):
+    time_data = get_time()
+
+    current_time = time_data['current_time']
+    day_ago = time_data['day_ago']
     lons = eq_data['lons']
     lats = eq_data['lats']
     mags = eq_data['mags']
     places = eq_data['places']
     depths = eq_data['depths']
+
+
 
     hover_text = [
             f"🌍{places}<br>"
@@ -34,7 +40,7 @@ def draw_map(eq_data):
 
     my_layout = {
         'title': {
-            'text': '🌍Earthquake Visualization',
+            'text': f"🌍Earthquake Visualization <br> ({day_ago} -- {current_time})",
             'font': {
                 'size': 36,
                 'color': '#1f2c56',
