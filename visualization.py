@@ -12,6 +12,13 @@ def draw_map(eq_data):
         'type': 'scattergeo',
         'lon': lons,
         'lat': lats,
+        'marker': {
+            'size': [mag*5 for mag in mags],
+            'color': mags,
+            'colorscale': 'Reds',
+            'reversescale': False,
+            'colorbar': {'title': 'Magnitude'}
+        }
     }
 
     my_layout = {
