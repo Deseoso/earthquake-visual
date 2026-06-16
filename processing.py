@@ -1,6 +1,3 @@
-from data_fetch import get_earthquakes
-
-
 def prepare_data(features):
     lons, lats, mags, places, depths = [], [], [], [], []
     for f in features:

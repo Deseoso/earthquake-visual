@@ -1,10 +1,7 @@
 from plotly import offline
-from data_fetch import get_time
-from processing import prepare_data
 
 
-def draw_map(eq_data):
-    time_data = get_time()
+def draw_map(eq_data, time_data):
 
     current_time = time_data['current_time']
     day_ago = time_data['day_ago']

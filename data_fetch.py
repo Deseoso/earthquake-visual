@@ -11,11 +11,10 @@ def get_time():
         'day_ago': day_ago.strftime("%Y-%m-%dT%H:%M:%S")
     }
 
-def get_earthquakes():
+def get_earthquakes(time_data):
 
     url = "https://earthquake.usgs.gov/fdsnws/event/1/query"
 
-    time_data = get_time()
     current_time = time_data['current_time']
     day_ago = time_data['day_ago']
 
