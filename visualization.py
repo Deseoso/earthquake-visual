@@ -26,14 +26,30 @@ def draw_map(eq_data):
         'marker': {
             'size': [mag*5 for mag in mags],
             'color': mags,
-            'colorscale': 'Reds',
+            'colorscale': 'YlOrRd',
             'reversescale': False,
             'colorbar': {'title': 'Magnitude'}
         }
     }
 
     my_layout = {
-        'title': 'Earthquake Visualization'
+        'title': {
+            'text': '🌍Earthquake Visualization',
+            'font': {
+                'size': 36,
+                'color': '#1f2c56',
+                'family': 'Courier New'
+            },
+            'x': 0.5
+        },
+        'geo': {
+            'showland': True,
+            'landcolor': "#89c47e",
+            'showocean': True,
+            'oceancolor': "rgb(200,220,255)",
+            'showcountries': True,
+            'showcoastlines': True,
+        }
     }
 
     fig = {'data': data, 'layout': my_layout}
